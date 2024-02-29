@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+    
+    <h1>Créer un article</h1>
+    
+    {{ form_start(form) }}
+
+    {{ form_row(form.title) }}
+
+    {{ form_widget(form) }}
+
+    <input type="submit" value="Enregistrer">
+    
+    {{ form_end(form) }}
+
+    <hr>
+
+    <h1>Tous les articles</h1>
+
+
+    {% for article in articles %}
+        <div>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.text }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}
